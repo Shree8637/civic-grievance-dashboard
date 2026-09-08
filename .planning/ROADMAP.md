@@ -36,9 +36,9 @@
 **UI hint**: yes
 
 ### Phase 1 Plans:
-- [ ] 01-01-PLAN.md — Tracer: End-to-end complaint submission → tracking ID → confirmation (AUTH-01, AUTH-03)
-- [ ] 01-02-PLAN.md — Tracking lookup by exact ID + fuzzy phone, status display (AUTH-03, AUTH-04)
-- [ ] 01-03-PLAN.md — Location selection (geolocation + map pin), photo upload, ward assignment (AUTH-01, AUTH-03)
+- [x] 01-01-PLAN.md — Tracer: End-to-end complaint submission → tracking ID → confirmation (AUTH-01, AUTH-03)
+- [x] 01-02-PLAN.md — Tracking lookup by exact ID + fuzzy phone, status display (AUTH-03, AUTH-04)
+- [x] 01-03-PLAN.md — Location selection (geolocation + map pin), photo upload, ward assignment (AUTH-01, AUTH-03)
 
 ### Phase 2: WhatsApp Channel
 **Goal**: Citizens can submit complaints via WhatsApp (free-text + location pin), receive a tracking ID reply, and track status — end-to-end WhatsApp flow works.
@@ -117,7 +117,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Core Complaint Submission & Tracking (Web) | 0/3 | Planned | - |
+| 1. Core Complaint Submission & Tracking (Web) | 3/3 | Planned | - |
 | 2. WhatsApp Channel | 0/3 | Not started | - |
 | 3. NLP Classification Engine | 0/3 | Not started | - |
 | 4. Clustering & Hotspots | 0/3 | Not started | - |
