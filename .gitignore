@@ -1,34 +1,34 @@
-# Dependencies
+# # Dependencies
 node_modules/
-__pycache__/
-*.pyc
-.venv/
-venv/
+# __pycache__/
+# *.pyc
+# .venv/
+# venv/
 
-# Environment files
-.env
-.env.local
-.env.*.local
+# # Environment files
+# .env
+# .env.local
+# .env.*.local
 
-# Build output
-frontend/dist/
-backend/uploads/
+# # Build output
+# frontend/dist/
+# backend/uploads/
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
+# # IDE
+# .vscode/
+# .idea/
+# *.swp
+# *.swo
 
-# OS files
-.DS_Store
-Thumbs.db
+# # OS files
+# .DS_Store
+# Thumbs.db
 
-# NLP models (binary, large) — allow trained classifiers
-nlp-service/models/*
-!nlp-service/models/classifier.joblib
-!nlp-service/models/classifier_resaved.joblib
+# # NLP models (binary, large) — allow trained classifiers
+# nlp-service/models/*
+# !nlp-service/models/classifier.joblib
+# !nlp-service/models/classifier_resaved.joblib
 
-# Logs
-*.log
-npm-debug.log*
+# # Logs
+# *.log
+# npm-debug.log*
