@@ -47,6 +47,9 @@ model_pipeline = None
 def get_model():
     global model_pipeline
     if model_pipeline is None:
+        print("BASE_DIR =", BASE_DIR)
+        print("MODEL_PATH =", MODEL_PATH)
+        print("FILE EXISTS =", os.path.exists(MODEL_PATH))
         if os.path.exists(MODEL_PATH):
             model_pipeline = joblib.load(MODEL_PATH)
             print(f"[OK] NLP Model loaded successfully from: {MODEL_PATH}")
