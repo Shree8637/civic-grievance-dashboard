@@ -1,0 +1,54 @@
+{
+  "total_samples": 300,
+  "train_samples": 240,
+  "test_samples": 60,
+  "accuracy": 0.8333,
+  "macro_avg_f1": 0.8338,
+  "weighted_avg_f1": 0.8338,
+  "classes": [
+    "drainage",
+    "garbage",
+    "other",
+    "roads",
+    "streetlights",
+    "water_supply"
+  ],
+  "per_class": {
+    "drainage": {
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.8235,
+      "support": 10.0
+    },
+    "garbage": {
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1": 0.9,
+      "support": 10.0
+    },
+    "other": {
+      "precision": 0.875,
+      "recall": 0.7,
+      "f1": 0.7778,
+      "support": 10.0
+    },
+    "roads": {
+      "precision": 0.6429,
+      "recall": 0.9,
+      "f1": 0.75,
+      "support": 10.0
+    },
+    "streetlights": {
+      "precision": 0.8889,
+      "recall": 0.8,
+      "f1": 0.8421,
+      "support": 10.0
+    },
+    "water_supply": {
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 10.0
+    }
+  }
+}

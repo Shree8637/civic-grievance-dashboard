@@ -1,0 +1,381 @@
+/* ============================================================
+   Admin Analytics Page Styling
+   ============================================================ */
+
+.admin-analytics-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Page Header ─────────────────────────────────────────── */
+.analytics-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.analytics-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.analytics-controls .form-select {
+  width: auto;
+  min-width: 130px;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+/* ── Trend Area Chart Card ───────────────────────────────── */
+.chart-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+}
+
+.chart-card-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.chart-card-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: flex-end;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.legend-item:hover {
+  opacity: 0.8;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chart-container {
+  width: 100%;
+  height: 320px;
+}
+
+/* ── Three-Col Panel Grid ────────────────────────────────── */
+.analytics-panels-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.analytics-panel {
+  min-height: 300px;
+}
+
+.analytics-panel .panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.analytics-panel .panel-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.analytics-panel .panel-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* ── Donut Center Label ──────────────────────────────────── */
+.donut-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.donut-chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.donut-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  justify-content: center;
+}
+
+.donut-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.donut-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.donut-legend-count {
+  color: var(--color-text-muted);
+  margin-left: 2px;
+}
+
+/* ── Ward Breakdown Horizontal Bars ──────────────────────── */
+.ward-bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: var(--space-2);
+}
+
+.ward-bar-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ward-bar-list::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.ward-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ward-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ward-bar-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.ward-bar-stats {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.ward-bar-track {
+  width: 100%;
+  height: 8px;
+  background: var(--color-bg);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  display: flex;
+}
+
+.ward-bar-segment {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.ward-bar-segment:first-child {
+  border-radius: var(--radius-full) 0 0 var(--radius-full);
+}
+
+.ward-bar-segment:last-child {
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+/* ── Resolution Stats ────────────────────────────────────── */
+.resolution-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.resolution-stat-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.resolution-stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.resolution-stat-info {
+  flex: 1;
+}
+
+.resolution-stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.resolution-stat-value {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.resolution-stat-value .stat-unit {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* Resolution Rate Ring */
+.rate-ring-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-2);
+}
+
+.rate-ring-svg {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  transform: rotate(-90deg);
+}
+
+.rate-ring-track {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 6;
+}
+
+.rate-ring-fill {
+  fill: none;
+  stroke: var(--color-secondary);
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease;
+}
+
+.rate-ring-info {
+  flex: 1;
+}
+
+.rate-ring-pct {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-secondary);
+}
+
+.rate-ring-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* ── Loading / Empty ─────────────────────────────────────── */
+.analytics-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-10) 0;
+}
+
+.analytics-loading p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.analytics-empty-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--color-text-muted);
+  gap: var(--space-2);
+}
+
+.analytics-empty-chart p {
+  font-size: var(--font-size-sm);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .analytics-panels-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-panels-grid {
+    grid-template-columns: 1fr;
+  }
+  .analytics-header-row {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .analytics-controls {
+    width: 100%;
+  }
+  .analytics-controls .form-select {
+    flex: 1;
+  }
+  .chart-container {
+    height: 250px;
+  }
+  .chart-legend {
+    justify-content: flex-start;
+  }
+}

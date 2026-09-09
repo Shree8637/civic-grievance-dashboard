@@ -1,0 +1,40 @@
+services:
+  # ── Civic Grievance Backend API ──────────────────────────────
+  - type: web
+    name: civic-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        sync: false
+      - key: NLP_SERVICE_URL
+        sync: false
+      - key: UPLOAD_DIR
+        value: ./uploads
+
+  # ── Civic Grievance NLP & Clustering Microservice ─────────────
+  - type: web
+    name: civic-nlp-service
+    runtime: python
+    plan: free
+    rootDir: nlp-service
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DATABASE_URL
+        sync: false
+      - key: MODEL_PATH
+        value: ./models/classifier.joblib
+      - key: CONFIDENCE_THRESHOLD
+        value: 0.6
