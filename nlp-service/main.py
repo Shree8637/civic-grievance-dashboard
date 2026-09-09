@@ -19,7 +19,7 @@ from cluster import compute_clusters
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-env_model_path = os.getenv("MODEL_PATH", "models/classifier.joblib")
+env_model_path = os.getenv("MODEL_PATH", "models/classifier_resaved.joblib")
 if os.path.isabs(env_model_path):
     MODEL_PATH = env_model_path
 else:
