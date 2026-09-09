@@ -7,6 +7,8 @@ Endpoints:
   GET  /health    — health check and model status
 """
 
+import sklearn
+import numpy
 import os
 import joblib
 from fastapi import FastAPI, HTTPException
@@ -19,7 +21,13 @@ from cluster import compute_clusters
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-env_model_path = os.getenv("MODEL_PATH", "models/classifier_resaved.joblib")
+env_model_path = os.getenv("MODEL_PATH")
+if not env_model_path:
+    if os.path.exists(os.path.join(BASE_DIR, "models", "classifier_resaved.joblib")):
+        env_model_path = "models/classifier_resaved.joblib"
+    else:
+        env_model_path = "models/classifier.joblib"
+
 if os.path.isabs(env_model_path):
     MODEL_PATH = env_model_path
 else:
@@ -51,6 +59,8 @@ def get_model():
         print("MODEL_PATH =", MODEL_PATH)
         print("FILE EXISTS =", os.path.exists(MODEL_PATH))
         if os.path.exists(MODEL_PATH):
+            print("SKLEARN =", sklearn.__version__)
+            print("NUMPY =", numpy.__version__)
             model_pipeline = joblib.load(MODEL_PATH)
             print(f"[OK] NLP Model loaded successfully from: {MODEL_PATH}")
         else:
