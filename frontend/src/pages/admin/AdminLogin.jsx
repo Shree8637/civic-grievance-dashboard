@@ -22,7 +22,13 @@ function AdminLogin() {
       localStorage.setItem('admin_user', JSON.stringify(data.user));
       navigate('/admin');
     } catch (err) {
-      setError(err.response?.data?.error || 'Login failed. Please try again.');
+      const msg =
+        err.response?.data?.error ||
+        err.response?.data?.detail ||
+        (err.code === 'ERR_NETWORK' || err.message === 'Network Error'
+          ? 'Network error: Unable to connect to backend server'
+          : 'Login failed. Please try again.');
+      setError(msg);
     } finally {
       setLoading(false);
     }
